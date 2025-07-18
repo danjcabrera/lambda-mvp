@@ -12,7 +12,7 @@ def pytest_configure(config):
     os.environ['AWS_SECRET_ACCESS_KEY'] = 'testing'
     os.environ['AWS_SECURITY_TOKEN'] = 'testing'
     os.environ['AWS_SESSION_TOKEN'] = 'testing'
-    os.environ['AWS_DEFAULT_REGION'] = 'us-east-1'
+    os.environ['AWS_DEFAULT_REGION'] = 'us-east-1'  # Set your default region
 
 # Shared fixtures that can be used across multiple test files
 @pytest.fixture(scope="function")
@@ -23,7 +23,6 @@ def aws_credentials():
     os.environ['AWS_SECURITY_TOKEN'] = 'testing'
     os.environ['AWS_SESSION_TOKEN'] = 'testing'
     os.environ['AWS_DEFAULT_REGION'] = 'us-east-1'
-
 @pytest.fixture(scope="function")
 def dynamodb_mock(aws_credentials):
     """DynamoDB mock using moto"""
