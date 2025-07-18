@@ -1,0 +1,10 @@
+version = 0.1
+
+[default.deploy.parameters]
+stack_name = "lambda-demo"
+resolve_s3 = true
+s3_prefix = "lambda-demo"
+region = ${AWS_REGION}
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = []
